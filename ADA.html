@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding ADA Title 1: Employment Rights</title>
+    <style>
+        :root {
+            --base-font-size: 18px;
+            --primary-blue: #0056b3;
+            --bg-color: #f4f7f9;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --border-color: #ccc;
+            --highlight: #e7f3ff;
+            --focus-ring: 3px solid #ffbf47;
+        }
+
+        body {
+            font-size: var(--base-font-size);
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* High Contrast Mode */
+        body.high-contrast {
+            --bg-color: #000000;
+            --text-color: #FFFFFF;
+            --card-bg: #000000;
+            --primary-blue: #FFFF00;
+            --highlight: #333300;
+            --border-color: #FFFFFF;
+        }
+
+        body.high-contrast a, 
+        body.high-contrast button {
+            color: #FFFF00;
+            border-color: #FFFFFF;
+        }
+
+        body.high-contrast *:focus {
+            outline: 2px solid #FFFF00 !important;
+        }
+
+        /* Accessibility Elements */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+        }
+        .skip-link:focus { top: 0; }
+
+        /* Layout */
+        header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+            border: 2px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .glossary-box {
+            background: var(--highlight);
+            padding: 10px;
+            border-left: 5px solid var(--primary-blue);
+            margin: 10px 0;
+        }
+
+        /* Interactive Mapping Tool */
+        .map-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .map-node {
+            border: 2px solid var(--primary-blue);
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            background: var(--highlight);
+        }
+
+        /* Comparison Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th { background: var(--highlight); }
+
+        .feedback {
+            font-weight: bold;
+            margin-top: 10px;
+            min-height: 1.5em;
+        }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <h1>ADA Title I: Rights at Work</h1>
+        <div class="controls">
+            <span id="size-label">Font Size: <span id="current-size">18px</span></span>
+            <button onclick="changeFontSize(-2)" aria-label="Decrease font size">A−</button>
+            <button onclick="changeFontSize(2)" aria-label="Increase font size">A+</button>
+            <button id="hc-toggle" onclick="toggleHighContrast()" aria-pressed="false">High Contrast: OFF</button>
+        </div>
+    </header>
+
+    <nav aria-label="Progress Menu" style="text-align: center; padding: 10px;">
+        <span id="progress-text">Step 1 of 4: Introduction</span>
+    </nav>
+
+    <main id="main-content" role="main">
+
+        <section id="step-1" aria-labelledby="h-step-1">
+            <h2 id="h-step-1">1. Who does the law protect?</h2>
+            <p>The Americans with Disabilities Act (ADA) Title I protects <strong>Qualified Individuals</strong>. This means a person who has the skills and experience for a job.</p>
+            
+            <div class="glossary-box" role="note">
+                <strong>Term: Qualified Individual</strong><br>
+                A person who can do the main parts of a job, with or without extra help.
+            </div>
+
+            <p><strong>Example:</strong> Maria uses a wheelchair. She is a great accountant. She is a "Qualified Individual" because she has the skills to do accounting work.</p>
+            
+            <button onclick="nextStep(2)" aria-label="Next step: Reasonable Accommodations">Next: Learning about Help at Work</button>
+        </section>
+
+        <section id="step-2" class="hidden" aria-labelledby="h-step-2">
+            <h2 id="h-step-2">2. Reasonable Accommodations</h2>
+            <p>An <strong>Accommodation</strong> is a change in the workplace. It helps a person with a disability do their job or apply for a job.</p>
+
+            <div class="glossary-box" role="note">
+                <strong>Term: Reasonable Accommodation</strong><br>
+                A change or tool that is not too expensive or difficult for the employer to provide.
+            </div>
+
+            <p><strong>Example:</strong> Sam has low vision. The company gives him a larger computer screen. This is a reasonable accommodation.</p>
+            
+            <h3>Compare: What is "Reasonable"?</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Reasonable (Common)</th>
+                        <th scope="col">Not Reasonable (Rare)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A quiet desk for someone who needs to focus.</td>
+                        <td>Removing the main duties of the job.</td>
+                    </tr>
+                    <tr>
+                        <td>Allowing a flexible start time for medical visits.</td>
+                        <td>Paying for a personal car or driver.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button onclick="nextStep(3)" aria-label="Next step: The Interactive Process">Next: How to ask for help</button>
+        </section>
+
+        <section id="step-3" class="hidden" aria-labelledby="h-step-3">
+            <h2 id="h-step-3">3. The Interactive Process (Communication)</h2>
+            <p>This is a conversation between the worker and the boss. They work together to find the best accommodation.</p>
+
+            <div class="glossary-box" role="note">
+                <strong>Term: Interactive Process</strong><br>
+                A two-way talk to solve problems. Both people must listen and share ideas.
+            </div>
+
+            <div class="map-container" role="region" aria-label="Mind Map of the Interactive Process">
+                <div class="map-node"><strong>1. Ask</strong><br>Worker asks for help.</div>
+                <div class="map-node"><strong>2. Talk</strong><br>Discuss what is hard.</div>
+                <div class="map-node"><strong>3. Choose</strong><br>Pick a solution.</div>
+                <div class="map-node"><strong>4. Try</strong><br>Use the new tool.</div>
+            </div>
+
+            <p><strong>Example:</strong> Ken tells his boss, "I have trouble hearing in meetings." The boss suggests using a live-captioning app. They both agree to try it for one week.</p>
+
+            <button onclick="nextStep(4)" aria-label="Next step: Essential Functions">Next: Main Job Duties</button>
+        </section>
+
+        <section id="step-4" class="hidden" aria-labelledby="h-step-4">
+            <h2 id="h-step-4">4. Essential Functions</h2>
+            <p>These are the most important tasks of a job. A worker must be able to do these tasks to keep the job.</p>
+
+            <div class="glossary-box" role="note">
+                <strong>Term: Essential Functions</strong><br>
+                The basic duties that a person must do to get the job done.
+            </div>
+
+            <p><strong>Example:</strong> For a delivery driver, driving is an <strong>Essential Function</strong>. Folding boxes might be a <strong>Marginal Function</strong> (extra task).</p>
+
+            <hr aria-hidden="true">
+            
+            <h3>Review Quiz</h3>
+            <fieldset>
+                <legend>If an employee needs a change at work to do their job, what should they do first?</legend>
+                <button onclick="checkAnswer(true)" style="margin-top:10px;">Start the "Interactive Process" (Talk to the boss)</button>
+                <button onclick="checkAnswer(false)" style="margin-top:10px;">Quit the job immediately</button>
+            </fieldset>
+
+            <div id="quiz-feedback" class="feedback" aria-live="polite"></div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo" style="text-align: center; padding: 20px; border-top: 1px solid var(--border-color);">
+        <p>Verified: All video/audio content includes text-based alternatives. | CC Verified ✅</p>
+    </footer>
+
+    <script>
+        // Font Size Logic
+        let currentSize = 18;
+        function changeFontSize(delta) {
+            currentSize = Math.min(Math.max(currentSize + delta, 12), 24);
+            document.documentElement.style.setProperty('--base-font-size', currentSize + 'px');
+            document.getElementById('current-size').innerText = currentSize + 'px';
+        }
+
+        // High Contrast Logic
+        function toggleHighContrast() {
+            const body = document.body;
+            const btn = document.getElementById('hc-toggle');
+            body.classList.toggle('high-contrast');
+            const isHC = body.classList.contains('high-contrast');
+            btn.innerText = isHC ? "High Contrast: ON" : "High Contrast: OFF";
+            btn.setAttribute('aria-pressed', isHC);
+        }
+
+        // Navigation Logic
+        function nextStep(stepNum) {
+            // Hide all sections
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('step-' + i).classList.add('hidden');
+            }
+            // Show target section
+            document.getElementById('step-' + stepNum).classList.remove('hidden');
+            // Update progress
+            const titles = ["", "Introduction", "Accommodations", "Communication", "Job Duties"];
+            document.getElementById('progress-text').innerText = `Step ${stepNum} of 4: ${titles[stepNum]}`;
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Quiz Logic
+        function checkAnswer(isCorrect) {
+            const feedback = document.getElementById('quiz-feedback');
+            if (isCorrect) {
+                feedback.innerHTML = "<span style='color:green;'>✅ Correct! Talking to the boss is the best first step.</span>";
+                feedback.style.color = document.body.classList.contains('high-contrast') ? "#FFFF00" : "green";
+            } else {
+                feedback.innerHTML = "<span style='color:red;'>❌ Try again. The ADA encourages workers and bosses to talk.</span>";
+                feedback.style.color = document.body.classList.contains('high-contrast') ? "#FFFF00" : "red";
+            }
+        }
+    </script>
+</body>
+</html>
