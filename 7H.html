@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: #1a1a1a;
+    background-color: #f4f4f4;
     display: grid;
     gap: 50px;
     grid-template-columns: 1fr;
@@ -35,7 +35,8 @@ body {
     flex-direction: column;
     padding: 70px;
     font-family: 'DM Sans', sans-serif;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    border: 1px solid #ddd;
 }
 
 /* 1.1 RIT BRANDED DECORATION */
@@ -59,7 +60,6 @@ body {
     font-weight: 700;
     font-size: 28px;
     color: #f76902;
-    opacity: 0.8;
 }
 
 .slide-container > * {
@@ -84,6 +84,8 @@ h1 {
     margin-bottom: 45px;
     text-align: left;
     width: 100%;
+    border-bottom: 5px solid #f76902;
+    padding-bottom: 10px;
 }
 
 h3 {
@@ -93,7 +95,7 @@ h3 {
 }
 
 p, li, td, th {
-    font-size: 32px; /* Extra large font */
+    font-size: 32px;
     line-height: 1.4;
     color: #333;
 }
@@ -138,10 +140,10 @@ p, li, td, th {
 
 .tile {
     flex: 1;
-    background-color: #fcfcfc;
+    background-color: #fff9f5;
     padding: 50px;
     border-radius: 25px;
-    border: 1px solid #eee;
+    border: 2px solid #f76902;
     text-align: center;
 }
 
@@ -151,18 +153,22 @@ p, li, td, th {
     margin-bottom: 30px;
 }
 
-.image-wrapper {
+.placeholder-img {
+    background-color: #f0f0f0;
     width: 100%;
     height: 420px;
     border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f76902;
+    border: 2px dashed #ccc;
 }
 
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.placeholder-img i {
+    font-size: 120px;
+    margin-bottom: 20px;
 }
 
 /* SECTION TITLE (Used for Copyright) */
@@ -203,22 +209,15 @@ td {
     border-bottom: 3px solid #f76902;
 }
 
-/* BLEED IMAGE LAYOUT */
-.slide-container.bleed-image-layout {
+/* BLEED IMAGE LAYOUT (Modified for LMS Compatibility) */
+.slide-container.grid-layout {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 0;
-    align-items: start;
+    gap: 20px;
 }
 
-.bleed-image-layout .content-container {
-    padding: 100px 70px;
-}
-
-.bleed-image-layout img {
-    width: 100%;
-    height: 720px;
-    object-fit: cover;
+.grid-layout .content-container {
+    padding: 20px 0;
 }
 
 /* HIGHLIGHT NUMBERS */
@@ -254,6 +253,7 @@ td {
 <!-- Slide 1: Title Slide -->
 <div class="slide-container" id="slide1">
     <div class="title-layout">
+        <p style="text-transform: uppercase; letter-spacing: 5px; font-weight: bold; color: #f76902; margin-bottom: 10px;">NCOM-207</p>
         <h1>The 7 Habits</h1>
         <p class="subtitle">For First-Time Job Seekers</p>
         <div style="margin-top: 60px; border-top: 4px solid #f76902; padding-top: 20px; width: 400px;">
@@ -275,7 +275,7 @@ td {
             <div class="tile">
                 <div class="icon"><i class="fa-solid fa-bolt-lightning"></i></div>
                 <h3>Choose Action</h3>
-                <p>Take responsibility for your choices instead of blaming the market or others.</p>
+                <p>Take responsibility for your choices instead of blaming others.</p>
             </div>
         </div>
     </div>
@@ -289,10 +289,11 @@ td {
             <div>
                 <h3>Have a Vision</h3>
                 <p>Know what kind of career path you want.</p>
-                <p style="margin-top: 30px;">Tailor your resume and elevator pitch to <strong>align</strong> with that specific goal.</p>
+                <p style="margin-top: 30px;">Tailor your resume to <strong>align</strong> with that specific goal.</p>
             </div>
-            <div class="image-wrapper">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/9435457736332748116" alt="Career roadmap vision">
+            <div class="placeholder-img">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <p style="font-size: 24px;">Career Roadmap</p>
             </div>
         </div>
     </div>
@@ -316,10 +317,6 @@ td {
                 </tr>
                 <tr>
                     <td><strong>Networking & Skills</strong></td>
-                    <td>Busy-work tasks</td>
-                </tr>
-                <tr>
-                    <td><strong>Interview Practice</strong></td>
                     <td>Procrastination</td>
                 </tr>
             </tbody>
@@ -332,13 +329,14 @@ td {
     <h2 class="slide-title">4. Think Win-Win</h2>
     <div class="content-area">
         <div class="two-column">
-            <div class="image-wrapper" style="border-radius: 50%; height: 500px; width: 500px; margin: 0 auto;">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/7689935257268134628" alt="Win-win collaboration">
+            <div class="placeholder-img" style="border-radius: 50%; height: 450px; width: 450px; margin: 0 auto;">
+                <i class="fa-solid fa-handshake"></i>
+                <p style="font-size: 24px;">Collaboration</p>
             </div>
             <div>
                 <h3>Mutual Benefit</h3>
                 <p>In interviews, show how you help the company.</p>
-                <p style="margin-top: 30px;">"Your skills help them succeed, and you grow professionally."</p>
+                <p style="margin-top: 30px;">Your skills help them, and they help you grow.</p>
             </div>
         </div>
     </div>
@@ -346,17 +344,17 @@ td {
 
 <!-- Slide 6: Habit 5 -->
 <div class="slide-container" id="slide6">
-    <h2 class="slide-title">5. Understand, then be Understood</h2>
+    <h2 class="slide-title">5. Seek First to Understand</h2>
     <div class="content-area">
         <div class="tiled-content">
-            <div class="tile" style="border-top: 10px solid #000;">
+            <div class="tile">
                 <div class="icon"><i class="fa-solid fa-ear-listen"></i></div>
-                <h3>Active Listening</h3>
+                <h3>Listen First</h3>
                 <p>Listen carefully to interview questions before you answer.</p>
             </div>
-            <div class="tile" style="border-top: 10px solid #f76902;">
-                <div class="icon"><i class="fa-solid fa-comments"></i></div>
-                <h3>Expectations</h3>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-clipboard-question"></i></div>
+                <h3>Ask Why</h3>
                 <p>Understand your manager's goals before starting a project.</p>
             </div>
         </div>
@@ -364,17 +362,18 @@ td {
 </div>
 
 <!-- Slide 7: Habit 6 -->
-<div class="slide-container bleed-image-layout" id="slide7">
+<div class="slide-container grid-layout" id="slide7">
     <div class="content-container">
         <h2 class="slide-title">6. Synergize</h2>
         <div class="content-area">
             <h3>Team Synergy</h3>
-            <p>Value teamwork and diverse strengths. Collaboration is key to modern work.</p>
-            <p style="margin-top: 30px;">Show employers you respect different perspectives and bring your own unique value.</p>
+            <p>Value teamwork and diverse strengths.</p>
+            <p style="margin-top: 30px;">Show employers you respect different perspectives.</p>
         </div>
     </div>
-    <div class="image-container">
-        <img src="http://googleusercontent.com/image_collection/image_retrieval/17351361875032741942" alt="Team synergy">
+    <div class="placeholder-img" style="height: 100%;">
+        <i class="fa-solid fa-people-group"></i>
+        <p style="font-size: 24px;">Working Together</p>
     </div>
 </div>
 
@@ -383,47 +382,26 @@ td {
     <h2 class="slide-title">7. Sharpen the Saw</h2>
     <div class="content-area">
         <ul class="styled-list">
-            <li><i class="fa-solid fa-circle-check"></i> <strong>Constant Learning:</strong> Keep updating your skills with certifications and workshops.</li>
-            <li><i class="fa-solid fa-heart"></i> <strong>Health & Balance:</strong> Take care of your mental and physical health to perform your best.</li>
-            <li><i class="fa-solid fa-seedling"></i> <strong>Renewal:</strong> Rest is just as important as the job search itself.</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Constant Learning:</strong> Update your skills often.</li>
+            <li><i class="fa-solid fa-heart"></i> <strong>Health & Balance:</strong> Take care of your mental health.</li>
+            <li><i class="fa-solid fa-battery-full"></i> <strong>Renewal:</strong> Rest is vital for long-term success.</li>
         </ul>
     </div>
 </div>
 
-<!-- Slide 9: Summary -->
-<div class="slide-container" id="slide9">
-    <h2 class="slide-title">Key Takeaways</h2>
-    <div class="content-area">
-        <div class="two-column">
-            <div>
-                <div class="big-number">1.</div>
-                <p><strong>Initiative</strong>: Apply, follow up, and ask for access.</p>
-            </div>
-            <div>
-                <div class="big-number">2.</div>
-                <p><strong>Focus</strong>: Know the kind of career you want.</p>
-            </div>
-        </div>
-        <div style="margin-top: 40px;">
-            <div class="big-number">3.</div>
-            <p><strong>Growth</strong>: Keep learning and practicing resilience.</p>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 10: Activity -->
-<div class="slide-container" id="slide10" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('http://googleusercontent.com/image_collection/image_retrieval/8410492849036487537'); background-size: cover; color: #fff;">
+<!-- Slide 9: Activity -->
+<div class="slide-container" id="slide10" style="background-color: #000; color: #fff;">
     <div class="title-layout">
-        <h2 style="color: #f76902; font-size: 70px; margin-bottom: 30px;">In-Class Activity</h2>
+        <h2 style="color: #f76902; font-size: 70px; margin-bottom: 30px; border-bottom: 5px solid #fff; padding-bottom: 10px;">In-Class Activity</h2>
         <p style="font-size: 40px; margin-bottom: 40px; font-weight: bold;">"The Interview Dilemma"</p>
-        <div style="text-align: left; background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px;">
-            <p style="color: #fff; margin-bottom: 20px;"><strong>Scenario:</strong> You are in an interview. The hiring manager seems confused about how to work with an interpreter.</p>
-            <p style="color: #fff;"><strong>Task:</strong> Which 2 habits will you use to turn this into a "Win-Win"? Explain your steps to the class.</p>
+        <div style="text-align: left; background: rgba(255,255,255,0.1); padding: 50px; border-radius: 20px; width: 90%;">
+            <p style="color: #fff; margin-bottom: 25px;"><strong>Scenario:</strong> You are in an interview. The manager is confused about how to work with an interpreter.</p>
+            <p style="color: #fff; font-size: 36px; border-left: 8px solid #f76902; padding-left: 20px;"><strong>Task:</strong> Which 2 habits will you use to turn this into a "Win-Win"?</p>
         </div>
     </div>
 </div>
 
-<!-- Slide 11: Copyright -->
+<!-- Slide 10: Copyright -->
 <div class="slide-container" id="slide11" style="padding: 0;">
     <div class="section-title-layout">
         <h2 style="font-size: 40px; margin-bottom: 10px;">The 7 Habits for Job Seekers</h2>
